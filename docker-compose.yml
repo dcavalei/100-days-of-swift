@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  swift:
+    image: swift
+    container_name: swift
+    volumes:
+      - swift:$PWD
+    command: ["tail", "-f"]
+
+volumes:
+  swift:
+    name: swift
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: $PWD

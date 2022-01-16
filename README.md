@@ -1,2 +1,6 @@
 # 100-days-of-swift
-Learning Swift using Docker containers as development environment
+## **Helpful commands**
+### Run container detached mode:
+	docker-compose run -d swift
+### Attach to running container:
+	
