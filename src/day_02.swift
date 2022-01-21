@@ -54,13 +54,15 @@ let favoriteIceCream = [
     "Sophie": "Vanilla"
 ]
 
-print(favoriteIceCream["Paul"])
+print(favoriteIceCream["Paul"] as Any) // warning if i don't to this 'as Any' thing
 
 print(favoriteIceCream["NOP", default: "YES"])
 
 print("") // Empty Dictionary
 
 var emptyDictionary = [String: Int]()
+var emptyDictionaryV2 = Dictionary<String, Int>()
+
 emptyDictionary["oi oi"] = 42
 emptyDictionary["bye bye"] = 42
 print(emptyDictionary)
@@ -71,5 +73,43 @@ var emptyArray = [Int]()
 emptyArray.append(1)
 emptyArray.append(2)
 emptyArray.append(3)
-
 print(emptyArray)
+
+print("") // Empty Set
+
+var emptySet = Set<Int>()
+
+print("")
+
+enum Result {
+
+	case success
+	case failure
+}
+
+
+let res = Result.success
+
+print(res)
+
+enum Activity {
+	case bored
+	case running(destination: String)
+	case talking(topic: String)
+	case singing(volume: Int)
+}
+
+let talking = Activity.talking(topic: "football")
+
+print(talking)
+
+enum Planet: Int {
+	case mercury = 1
+	case venus
+	case earth
+	case mars
+}
+
+let earthPlanet = Planet(rawValue: 3)
+print(earthPlanet as Any) // i don't know but the compiler told me to do this
+
